@@ -25,4 +25,11 @@ if __name__ == '__main__':
     shutil.move(filename + ".pub", ssh_path)
 
     with open(ssh_path + "config",'a+', encoding="utf-8") as file:
-        file.writelines(["#"+args.account_name +" account", "\nHost github.com-"+args.account_name,"\n	HostName github.com","\n	User git","\n	IdentityFile ~/.ssh/"+filename, "\n\n"])
+        file.writelines([
+            "\n#"+args.account_name +" account",
+            "\nHost github.com-"+args.account_name,
+            "\n\tHostName github.com",
+            "\n\tUser git",
+            "\n\tIdentityFile ~/.ssh/"+filename,
+            "\n"
+         ])
