@@ -19,11 +19,11 @@ def filterFileAlreadyAdded(files):
 def ask_user(question):
     response = input(question).lower().strip()
     while not(response == 'y' or response == 'yes' or response == 'n' or response == 'no'):
-        if response == 'y' or response == 'yes':
-            return True
-        elif response == 'n' or response == 'no':
-            return False
         response = input(question).lower().strip()
+    if response == 'y' or response == 'yes':
+        return True
+    elif response == 'n' or response == 'no':
+        return False
 
 if __name__ == '__main__':
     args = parser.parse_args()
