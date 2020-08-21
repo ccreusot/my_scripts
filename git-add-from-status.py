@@ -37,7 +37,7 @@ if __name__ == '__main__':
             isUntrack = True
             filefullpath = file.replace(b'?? ', b'')
         else:
-            filefullpath = file.replace(b' M ', b'')
+            filefullpath = file.lstrip().split(b' ')[1]
 
         if args.add_all:
             subprocess.run(['git', 'add', filefullpath])
